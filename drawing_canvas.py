@@ -27,7 +27,7 @@ class DrawingCanvas:
     def get_canvas(self) -> tkinter.Canvas:
         return self.__canvas
 
-    def reset_canvas(self):
+    def reset_canvas(self) -> None:
         self.__canvas.create_rectangle(0, 0, self.__width, self.__height, fill=self.__bg_color)
 
     def __draw(self, x: int, y: int) -> None:
@@ -50,7 +50,7 @@ class DrawingCanvas:
     def motion(self, event: tkinter.Event) -> None:
         self.__draw(event.x, event.y)
 
-    def get_canvas_rectangle_coordinates(self):
+    def get_canvas_rectangle_coordinates(self) -> tuple:
         """
         Вернуть прямоугольную область холста
         с координатами относительно самого приложения
